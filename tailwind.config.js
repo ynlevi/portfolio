@@ -4,9 +4,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#75C2F6",
-        secondary: "#FFD9B7",
-        success: "#C8E4B2",
+        primary: "#9e9bf2",
+        "primary-hover": "#6F61C0",
+        // secondary: "",
+        // scondaryHover: "",
+        light: "#f2f2f2",
+        success: "#00acee",
         danger: "#FE0000",
       },
     },

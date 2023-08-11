@@ -1,4 +1,7 @@
-// bg-blend-color
 export default function Home() {
-  return <div>home</div>;
+  return (
+    <>
+      <p>pully buuly home</p>
+    </>
+  );
 }

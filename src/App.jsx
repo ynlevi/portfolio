@@ -6,18 +6,14 @@ import Header from "./componets/Header";
 import Footer from "./componets/Footer";
 import Home from "./pages/main/Home";
 import About from "./pages/main/About";
-import RestaurantA from "./pages/main/RestA";
-import RestaurantB from "./pages/main/RestB";
-import Catering from "./pages/main/Catring";
+import Projects from "./pages/main/Projects";
 import ContactUs from "./pages/main/Contact";
 import NotFound from "./pages/main/NotFound";
 
 const navLinks = [
   { name: Home, path: "/" },
   { name: About, path: "about" },
-  { name: RestaurantA, path: "restaurant-a" },
-  { name: RestaurantB, path: "restaurant-b" },
-  { name: Catering, path: "catering" },
+  { name: Projects, path: "projects" },
   { name: ContactUs, path: "contact-us" },
 ];
 function App() {
@@ -25,10 +21,10 @@ function App() {
     <>
       <Header />
       <Routes>
-        {navLinks.map((elm) => (
-          <Route exact path={elm.path} Component={elm.name} />
+        {navLinks.map((elm, i) => (
+          <Route key={i} exact path={elm.path} Component={elm.name} />
         ))}
-        <Route path="*" Component={NotFound} />
+        <Route exact={true} path="*" Component={NotFound} />
       </Routes>
       <Footer />
     </>

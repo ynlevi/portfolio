@@ -59,11 +59,11 @@ const SideMenu = ({ handleClick }) => {
         exit="isClose"
       >
         <motion.ul className="text-4xl flex justify-between py-5 px-3">
-          <motion.li>
+          <motion.li onClick={handleClick}>
             <Logo />
           </motion.li>
-          <motion.li>
-            <BtnXMotion icon={<CgClose />} handleClick={handleClick} />
+          <motion.li onClick={handleClick}>
+            <BtnXMotion icon={<CgClose />} />
           </motion.li>
         </motion.ul>
         <MenuLinks />
@@ -118,10 +118,10 @@ const MenuLinks = () => {
       animate="open"
     >
       {navLinks.map((obj, i) => (
-        <Link to={obj.path}>
+        <Link key={i} exact={"true"} to={obj.path}>
           <motion.li
+            className="my-3 ml-4 text-primary hover:text-primary-hover list-none font-bold"
             variants={castumLinkItem}
-            className="my-3 ml-4 hover:text-primary list-none font-bold"
             whileHover={{ x: 10 }}
           >
             {obj.name}
