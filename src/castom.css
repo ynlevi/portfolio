@@ -1,13 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap");
+/* fonts  */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=Roboto+Mono:wght@100;200;300;400;500&display=swap");
 :root {
-  --primary: #9e9bf2;
-  --primary-hover: #6f61c0;
-  /* // secondary: "",
-  // scondaryHover: "", */
-  --light: "#f2f2f2";
+  --dk-primary: #e5b8f4;
+  --dk-primary-bg: #2d033b;
+  --dk-secondary: #fdffae;
+  --dk-secondary-bg: #810ca8;
+  /* --success: #fdffae; */
 }
 body {
-  font-family: "inter", sans-serif;
+  font-family: inter, sans-serif;
   /* light */
-  background-color: var(--light);
+  background-color: var(--dk-primary);
 }

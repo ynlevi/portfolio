@@ -1,31 +1,37 @@
 import navLinks from "../data/links/navLinks";
-import { NavLink } from "react-router-dom";
+
 import { motion } from "framer-motion";
-export default function ComputerHeader() {
+import LanguageSwitcher from "./LanguageSwitcher";
+export default function ComputerHeader({ refs }) {
+  console.log(refs);
   const castumLinkList = {};
   const castumLinkItem = {};
+  const scrolTo = (sectionRef) =>
+    sectionRef.current.scrollIntoView({ behavior: "smooth" });
   return (
-    <div className="hidden md:block">
+    <div className="hidden md:flex flex-col justify-between ml-5 absolute top-0 bottom-0 my-4 ">
+      <LanguageSwitcher />
       <ul>
-        <motion.nav
-          className="flex gap-2 text-sm"
+        <motion.div
+          className="flex flex-col gap-8  "
           variants={castumLinkList}
           initial="closed"
           animate="open"
         >
           {navLinks.map((obj, i) => (
-            <NavLink key={i} exact={"true"} to={obj.path}>
+            <nav key={i} exact={"true"} to={obj.path}>
               <motion.li
                 variants={castumLinkItem}
-                className="my-5 ml-4 hover:text-sky-300  text-primary list-none font-light"
-                whileHover={{ y: -3 }}
-                whileTap={{ fontSize: "bold" }}
+                className="  text-dk-secondary list-none font-extralight tracking-widest cursor-pointer"
+                whileHover={{ color: "var(--dk-primary)" }}
+                whileTap={{ y: -3 }}
+                onClick={() => scrolTo(refs[obj.path])}
               >
                 {obj.name}
               </motion.li>
-            </NavLink>
+            </nav>
           ))}
-        </motion.nav>
+        </motion.div>
       </ul>
     </div>
   );

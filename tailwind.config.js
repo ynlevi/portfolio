@@ -1,18 +1,24 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        primary: "#9e9bf2",
-        "primary-hover": "#6F61C0",
-        // secondary: "",
+        // dk === "dark"
+        //lt === "light"
+        "dk-primary": "#e5b8f4",
+        "dk-primary-bg": "#2d033b",
+        "dk-secondary": "#FDFFAE",
+        "dk-secondary-bg": "#810ca8",
         // scondaryHover: "",
-        light: "#f2f2f2",
+
         success: "#00acee",
         danger: "#FE0000",
       },
     },
+    fontFamily: {
+      mono: ["Roboto Mono", "monospace"],
+    },
   },
-  plugins: [],
 };
