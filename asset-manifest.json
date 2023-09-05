@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/portfoilio/static/css/main.7ecee90c.css",
-    "main.js": "/portfoilio/static/js/main.068ac3bb.js",
+    "main.css": "/portfoilio/static/css/main.3702c7bd.css",
+    "main.js": "/portfoilio/static/js/main.cc14df73.js",
     "static/media/sayag-studio.mp4": "/portfoilio/static/media/sayag-studio.dfaacb2f1ba65cd34270.mp4",
     "static/media/profile.jpeg": "/portfoilio/static/media/profile.f7742026938e0e9d3a65.jpeg",
     "index.html": "/portfoilio/index.html",
-    "main.7ecee90c.css.map": "/portfoilio/static/css/main.7ecee90c.css.map",
-    "main.068ac3bb.js.map": "/portfoilio/static/js/main.068ac3bb.js.map"
+    "main.3702c7bd.css.map": "/portfoilio/static/css/main.3702c7bd.css.map",
+    "main.cc14df73.js.map": "/portfoilio/static/js/main.cc14df73.js.map"
   },
   "entrypoints": [
-    "static/css/main.7ecee90c.css",
-    "static/js/main.068ac3bb.js"
+    "static/css/main.3702c7bd.css",
+    "static/js/main.cc14df73.js"
   ]
 }
