@@ -7,8 +7,7 @@ export default function Footer({ className }) {
         href="https://ynlevi.github.io/CV/"
         className={`w-fit text-xs sm:text-sm  text-primary py-2  text-dk-secondary  ${className}`}
       >
-        {/* {t("footer.a") + " " + currentYear} */}
-        Made with ♡ by Yonathan Levi | © All rights reserved {currentYear}
+        {t("footer.a") + " " + currentYear}
       </a>
     </div>
   );

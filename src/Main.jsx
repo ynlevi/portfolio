@@ -37,7 +37,7 @@ export default function Main() {
   return (
     <div ref={mainRef}>
       <MobileHeader refs={refs} mainRef={mainRef} />
-      <div>
+      <div dir={"auto"}>
         <motion.div
           className="sticky top-0 bg-dk-primary-bg "
           style={{ opacity, scale }}
@@ -46,7 +46,7 @@ export default function Main() {
           <About />
         </motion.div>
         <motion.div
-          className="relative inset-0 z-10 bg-dk-primary-bg mt-2"
+          className="z-10 bg-dk-primary-bg mt-2 relative"
           ref={sectionRef}
         >
           {/*!!!! names of refs need to fit the navLinks arr that located at ./data/links/navLinks !!!!*/}

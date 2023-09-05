@@ -13,15 +13,12 @@ export default function About() {
   const [pEffectIsFinished, setPEffectIsFinished] = useState(false);
 
   const data = (
-    <div
-      className="flex flex-col justify-evenly gap-24 overflow-hidden "
-      style={{ height: "calc(100vh - 6rem)" }}
-    >
-      <div className=" mx-auto w-11/12 sm:w-9/12 md:w-10/12 relative md:left-8 mt-10 ">
+    <div className="flex flex-col justify-evenly gap-20 w-screen h-screen ">
+      <div className=" mx-auto w-8/12 md:w-10/12  relative md:left-8 md:mt-20  -z-50">
         <TypingEffect
           txt={["Hi there:)", "I'm Yonathan"]}
           className={
-            "text-3xl sm:text-5xl text-dk-primary font-mono md:max-w-2xl mx-auto -mt-12"
+            "text-3xl sm:text-5xl text-dk-primary font-mono md:max-w-2xl mx-auto "
           }
           handleFinish={() =>
             setTimeout(() => setHeaderEffectIsFinished(true), 700)
@@ -39,7 +36,7 @@ export default function About() {
         )}
       </div>
       <motion.div
-        className="w-80 h-80  md:w-[30rem] md:h-[30rem] mx-auto"
+        className="w-80 h-80  md:w-[23rem] md:h-[23rem] mx-auto "
         initial={
           isSmall
             ? { opacity: 0, scale: 0.01, rotate: "360deg", x: 7, y: -242 }
@@ -53,7 +50,7 @@ export default function About() {
             scale: 1,
             rotate: 0,
             x: isSmall ? [7, 200, 0] : isMedium ? [240, 400, 0] : [298, 500, 0],
-            y: 0,
+            y: [isSmall ? -242 : isMedium ? -280 : -276, -320, 0],
             transition: { duration: 2 },
           }
         }
@@ -66,5 +63,5 @@ export default function About() {
       </motion.div>
     </div>
   );
-  return <Section data={data} className={"h-screen w-full md:w-full "} />;
+  return data;
 }

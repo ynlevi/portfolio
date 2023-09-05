@@ -6,7 +6,7 @@ import {
   useTransform,
 } from "framer-motion";
 import TypingEffect from "./TypingEffect";
-const Section = forwardRef(({ data, header, className }, ref) => {
+const Section = forwardRef(({ data, header, className, dir }, ref) => {
   const [isInView, setIsInView] = useState(false);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -18,10 +18,11 @@ const Section = forwardRef(({ data, header, className }, ref) => {
     [0.75, 1, 1, 0.75]
   );
   return (
-    <motion.section
-      className={`py-16 md:14 w-11/12 mx-auto md:w-10/12  ${className}`}
+    <motion.div
+      className={`py-16 w-11/12 mx-auto md:w-10/12  ${className}`}
       ref={ref}
       style={{ scale }}
+      dir={dir ? dir : "ltr"}
     >
       {header && (
         <motion.div
@@ -43,7 +44,7 @@ const Section = forwardRef(({ data, header, className }, ref) => {
         </motion.div>
       )}
       {data}
-    </motion.section>
+    </motion.div>
   );
 });
 export default Section;

@@ -1,8 +1,9 @@
 import Section from "../../componets/Section";
 import { forwardRef } from "react";
 import { color, motion } from "framer-motion";
-import { useMediaQuery } from "@uidotdev/usehooks";
+import { useTranslation } from "react-i18next";
 const WhyMe = forwardRef((_, ref) => {
+  const { t } = useTranslation();
   const containerVariant = {
     shown: {
       transition: { staggerChildren: 0.1, delayChildren: 0.5 },
@@ -10,7 +11,7 @@ const WhyMe = forwardRef((_, ref) => {
   };
   const data = (
     <motion.div
-      className=" text-dk-secondary-bg text-sm mt-11 mb-6 flex flex-col gap-5 md:gap-8 "
+      className=" text-dk-secondary-bg text-sm pt-8 mb-6 flex flex-col gap-5 md:gap-8  "
       variants={containerVariant}
       initial="hidden"
       whileInView="shown"
@@ -21,13 +22,12 @@ const WhyMe = forwardRef((_, ref) => {
       ))}
     </motion.div>
   );
-  return (
-    <Section data={data} header={"why me?"} ref={ref} className={"pt-24"} />
-  );
+  return <Section data={data} header={t("header.links.0")} ref={ref} />;
 });
 export default WhyMe;
 
 const WhyMeCard = ({ i }) => {
+  const { t } = useTranslation();
   const progress = i / (whyMeData.length - 1);
   const leftValue = `calc(${progress * 100}% - ${progress * 32}rem)`;
   const cardVariant = {
@@ -56,8 +56,8 @@ const WhyMeCard = ({ i }) => {
       </li>
       <li className="px-3 my-auto">
         <p>
-          <span className="font-bold capitalize">{whyMeData[i].span}</span>
-          {whyMeData[i].p}
+          <span className="font-bold capitalize">{t(`whyMe.${i}.span`)}</span>
+          {t(`whyMe.${i}.p`)}
         </p>
       </li>
     </motion.ul>
@@ -101,8 +101,6 @@ const Icon = ({ i }) => (
 
 const whyMeData = [
   {
-    span: `passion. `,
-    p: `I like good and modern design, with beautiful and right color, that makes since on the transport the vibe we are trying to get from the project, and overall makes an enjoyable and satisfied user experience.`,
     path: {
       viewBox: "0 0 24 24",
       ds: [
@@ -112,8 +110,6 @@ const whyMeData = [
     },
   },
   {
-    span: "Simplicity.",
-    p: " I strongly belive in minimalistic and clean design. using the minimum amount of theme colors and buttons possible, makes the website, in my opinion, feel more elegant and sophisticated.",
     path: {
       viewBox: "0 0 16 18",
       ds: [
@@ -123,8 +119,6 @@ const whyMeData = [
     },
   },
   {
-    span: `Perfectionism on every pixel. `,
-    p: ` I don't believe in miracles. I must understand every weird and unexpected behaviour that happening in the project.`,
     path: {
       viewBox: "0 0 24 24",
       ds: [
@@ -135,8 +129,6 @@ const whyMeData = [
     },
   },
   {
-    span: `syntactic sugar. `,
-    p: `I use the latest update technology that allowd me to implement quite complex behiver in cleaner and more readable syntax. in addition, I prefer making small component with good naming that would help other developers to understand my code easily.`,
     path: {
       viewBox: "0 0 24 24",
       ds: [
@@ -146,8 +138,6 @@ const whyMeData = [
     },
   },
   {
-    span: `Ambitioun. `,
-    p: `My life now is dedicate to build my career and my reputation as a good front end development. I would do anything to make sure your are happy with my work.`,
     path: {
       viewBox: "0 0 24 24",
       ds: [

@@ -6,6 +6,7 @@ import navLinks from "../data/links/navLinks";
 //npm
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 // icons
 import { RxHamburgerMenu } from "react-icons/rx";
 import { CgClose } from "react-icons/cg";
@@ -98,6 +99,7 @@ const SideMenu = ({ handleClick, refs, mainRef }) => {
 };
 
 const MenuLinks = ({ refs, handleClick }) => {
+  const { t } = useTranslation();
   const castumLinkList = {
     open: {
       clipPath: "inset(0% 0% 0% 0% round 10px)",
@@ -142,7 +144,7 @@ const MenuLinks = ({ refs, handleClick }) => {
           whileTap={{ color: "var(--dk-secondary)" }}
           onClick={() => scrollTo(refs[obj.path], handleClick)}
         >
-          {obj.name}
+          {t(`header.links.${i}`)}
         </motion.li>
       ))}
     </motion.ul>

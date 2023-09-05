@@ -2,13 +2,15 @@ import navLinks from "../data/links/navLinks";
 import BtnGitHub from "./BtnGitHub";
 import { motion } from "framer-motion";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 export default function ComputerHeader({ refs }) {
+  const { t } = useTranslation();
   const castumLinkList = {};
   const castumLinkItem = {};
   const scrolTo = (sectionRef) =>
     sectionRef.current.scrollIntoView({ behavior: "smooth" });
   return (
-    <div className="hidden md:flex absolute top-0 bottom-0 w-screen justify-between ">
+    <div className="hidden md:flex absolute top-0 bottom-0 w-screen justify-between  ">
       <div className="flex flex-col justify-between ml-5 my-4">
         <LanguageSwitcher />
         <ul>
@@ -27,7 +29,7 @@ export default function ComputerHeader({ refs }) {
                   whileTap={{ y: -3 }}
                   onClick={() => scrolTo(refs[obj.path])}
                 >
-                  {obj.name}
+                  {t(`header.links.${i}`)}
                 </motion.li>
               </nav>
             ))}

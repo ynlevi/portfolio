@@ -12,8 +12,10 @@ import { SiTailwindcss } from "react-icons/si";
 import { LuFramer } from "react-icons/lu";
 import { BsGit } from "react-icons/bs";
 import { forwardRef } from "react";
+import { useTranslation } from "react-i18next";
 
 const Tools = forwardRef((_, ref) => {
+  const { t } = useTranslation();
   const data = (
     //applying left & right shadow
     <div className="relative flex sm:gap-8 md:gap-12 overflow-hidden before:absolute before:inset-y-0 before:left-0 before:z-50 before:w-2/6 before:bg-gradient-to-r before:from-dk-primary-bg  before:to-transparent before:scale-110 after:absolute after:inset-y-0 after:-right-4 z-10 after:bg-gradient-to-l after:from-dk-primary-bg after:to-transparent after:w-2/6 after:scale-110  ">
@@ -22,7 +24,12 @@ const Tools = forwardRef((_, ref) => {
     </div>
   );
   return (
-    <Section header={"My Tools"} data={data} className={"my-12"} ref={ref} />
+    <Section
+      header={t("header.links.2")}
+      data={data}
+      className={"my-12"}
+      ref={ref}
+    />
   );
 });
 export default Tools;

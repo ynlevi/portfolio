@@ -1,7 +1,8 @@
 import i18n from "i18next";
 // import Backend from "i18next-xhr-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
-import { home as heHome } from "./data/text/he";
+import he from "./data/text/he";
+import en from "./data/text/en";
 import { initReactI18next } from "react-i18next";
 i18n
 
@@ -20,20 +21,8 @@ i18n
       escapeValue: false, // not needed for react as it escapes by default
     },
     resources: {
-      en: {
-        translation: {
-          h1: { 0: "Hi, this is the Home page" },
-          activeBtn: { first: "contact as!" },
-        },
-      },
-      he: {
-        translation: heHome,
-      },
-      fr: {
-        translation: {
-          h1: { 0: "c'est la langue française" },
-        },
-      },
+      en: { translation: en },
+      he: { translation: he },
     },
   });
 

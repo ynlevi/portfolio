@@ -1,7 +1,13 @@
 /* fonts  */
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=Roboto+Mono:wght@100;200;300;400;500&display=swap");
-
+/* download spacil Hebrew font  */
+@font-face {
+  font-family: "frank-ruhl";
+  src: url("./data/fonts/Frank-Ruhl/regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 :root {
   --dk-primary: #e5b8f4;
   --dk-primary-bg: #2d033b;
@@ -10,10 +16,16 @@
   /* --success: #fdffae; */
 }
 body {
+  /*English*/
   font-family: inter, sans-serif;
+
   /* light */
   background-color: var(--dk-primary);
 }
+/* Hebrew */
+/* html:lang("he") body {
+  font-family: , sans-serif;
+} */
 @keyframes move-right {
   from {
     transform: translate(0);
