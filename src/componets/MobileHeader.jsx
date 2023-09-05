@@ -1,18 +1,18 @@
 //components
-import BtnHamburger from "./BtnHamburger";
+
 ///npms
 import { motion } from "framer-motion";
 import { forwardRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
+import SideBar from "./SideBar";
+
 // icons
 
 function MobileHeader({ refs, mainRef }) {
   const [isOpen, setOpen] = useState(false);
   const toggleVisible = () => setOpen((prev) => !prev);
   return (
-    // opacity-30 scale-50
-
     <motion.div
       className={`md:hidden w-full fixed top-0 z-40 bg-dk-primary-bg h-16  p-2 pr-3 flex justify-between `}
       initial={{ opacity: 0.8 }}
@@ -21,7 +21,7 @@ function MobileHeader({ refs, mainRef }) {
       }
     >
       <LanguageSwitcher />
-      <BtnHamburger
+      <SideBar
         refs={refs}
         mainRef={mainRef}
         handleClick={toggleVisible}

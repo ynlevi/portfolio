@@ -39,7 +39,7 @@ export default function Main() {
       <MobileHeader refs={refs} mainRef={mainRef} />
       <div>
         <motion.div
-          className="sticky top-0 bg-dk-primary-bg"
+          className="sticky top-0 bg-dk-primary-bg "
           style={{ opacity, scale }}
         >
           <ComputerHeader refs={refs} />

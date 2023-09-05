@@ -4,7 +4,7 @@ const Contact = forwardRef((_, ref) => {
   const data = <ContactForm />;
   return (
     <Section
-      className={"max-w-xl mt-20 mb-28 "}
+      className={"max-w-xl my-[20vh] "}
       header={"Let's have a chat:)"}
       data={data}
       ref={ref}
@@ -60,7 +60,7 @@ const ContactForm = () => {
     );
   }
   const castumInput =
-    "focus:outline-none focus:ring ring-dk-primary relative w-full px-3 py-3 text-sm text-gray-600 placeholder:text-dk-primary bg-white border-0 rounded-lg shadow outline-none font-mono";
+    "focus:outline-none focus:ring ring-dk-primary relative w-full px-3 py-3 text-sm text-dk-secondary-bg placeholder:text-dk-primary bg-white border-0 rounded-lg shadow outline-none font-mono ";
 
   return (
     <form action={FORM_ENDPOINT} onSubmit={handleSubmit} method="POST">
@@ -76,9 +76,9 @@ const ContactForm = () => {
       <div className="pt-0 mb-3">
         <input
           type="email"
-          placeholder="Email"
+          placeholder="Your Email"
           name="email"
-          className="focus:outline-none focus:ring ring-dk-primary relative w-full px-3 py-3 text-sm text-dk-secondary-bg placeholder:text-dk-primary bg-white border-0 rounded-lg font-mono"
+          className={castumInput}
           required
         />
       </div>

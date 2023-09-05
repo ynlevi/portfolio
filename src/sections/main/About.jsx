@@ -2,7 +2,8 @@ import Section from "../../componets/Section";
 import profile from "../../data/media/images/profile.jpeg";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { useTypewriter, Cursor } from "react-simple-typewriter";
+
+import TypingEffect from "../../componets/TypingEffect";
 import { useMediaQuery } from "@uidotdev/usehooks";
 export default function About() {
   const isSmall = useMediaQuery("only screen and (max-width : 640px)");
@@ -13,37 +14,35 @@ export default function About() {
 
   const data = (
     <div
-      className="flex flex-col justify-evenly"
+      className="flex flex-col justify-evenly gap-24 overflow-hidden "
       style={{ height: "calc(100vh - 6rem)" }}
     >
-      <div className=" mx-auto w-11/12 sm:w-9/12 md:w-10/12 ">
+      <div className=" mx-auto w-11/12 sm:w-9/12 md:w-10/12 relative md:left-8 mt-10 ">
         <TypingEffect
-          p={["Hi there, I'm Yonathan"]}
+          txt={["Hi there:)", "I'm Yonathan"]}
           className={
-            "text-3xl md:text-5xl text-dk-primary font-mono md:max-w-2xl mx-auto"
+            "text-3xl sm:text-5xl text-dk-primary font-mono md:max-w-2xl mx-auto -mt-12"
           }
           handleFinish={() =>
             setTimeout(() => setHeaderEffectIsFinished(true), 700)
           }
         />
-        {HeaderEffectIsFinished ? (
+        {HeaderEffectIsFinished && (
           <TypingEffect
-            p={["A Front-End developer who can do pretty cool stuff"]}
+            txt={["A Front-End developer who can do pretty cool stuff"]}
             className={
-              "text-dk-primary  md:text-xl mt-8 font-mono md:max-w-2xl mx-auto md:pl-6"
+              "text-dk-primary sm:text-xl mt-8 font-mono max-w-xs md:max-w-2xl mx-auto absolute md:inset-x-0"
             }
             handleFinish={() => setPEffectIsFinished(true)}
             speed={30}
           />
-        ) : (
-          <p className="mt-8 md:mt-9 opacity-0">{"."}</p>
         )}
       </div>
       <motion.div
-        className="w-96 h-96 mx-auto "
+        className="w-80 h-80  md:w-[30rem] md:h-[30rem] mx-auto"
         initial={
           isSmall
-            ? { opacity: 0, scale: 0.01, rotate: "360deg", x: -106, y: -272 }
+            ? { opacity: 0, scale: 0.01, rotate: "360deg", x: 7, y: -242 }
             : isMedium
             ? { opacity: 0, scale: 0.01, rotate: "360deg", x: 240, y: -280 }
             : { opacity: 0, scale: 0.01, rotate: "360deg", x: 298, y: -276 }
@@ -53,7 +52,7 @@ export default function About() {
             opacity: 1,
             scale: 1,
             rotate: 0,
-            x: 0,
+            x: isSmall ? [7, 200, 0] : isMedium ? [240, 400, 0] : [298, 500, 0],
             y: 0,
             transition: { duration: 2 },
           }
@@ -62,31 +61,10 @@ export default function About() {
         <motion.img
           src={profile}
           alt="profile"
-          className="w-full h-full rounded-full shadow-md"
+          className="w-full h-full rounded-full shadow-md "
         />
       </motion.div>
     </div>
   );
-  return <Section data={data} className={"h-screen"} />;
+  return <Section data={data} className={"h-screen w-full md:w-full "} />;
 }
-const TypingEffect = ({ p, className, handleFinish, speed }) => {
-  const [hideCursor, setHideCursor] = useState(false);
-  const [text] = useTypewriter({
-    words: p,
-    loop: 1,
-    onLoopDone: () => {
-      setHideCursor(true);
-      handleFinish();
-    },
-    typeSpeed: speed,
-  });
-  return (
-    <div className={className}>
-      <span>{text}</span>
-      <Cursor
-        cursorStyle={hideCursor ? "." : "|"}
-        cursorBlinking={!hideCursor}
-      />
-    </div>
-  );
-};
