@@ -1,7 +1,7 @@
 {
-  "name": "portfoilio",
+  "name": "portfolio",
   "version": "0.1.0",
-  "homepage": "https://ynlevi.github.io/portfoilio",
+  "homepage": "https://ynlevi.github.io/portfolio",
   "private": true,
   "dependencies": {
     "@fontsource/inter": "^5.0.8",
