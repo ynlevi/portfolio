@@ -10,13 +10,16 @@ const Contact = forwardRef((_, ref) => {
   const { t } = useTranslation();
   const data = <ContactForm />;
   return (
-    <Section
-      className={"max-w-xl my-[10vh] "}
-      header={t("header.links.3")}
-      data={data}
-      ref={ref}
-      dir={"auto"}
-    />
+    <>
+      <Section
+        className={"max-w-xl my-[10vh] "}
+        header={t("header.links.3")}
+        data={data}
+        ref={ref}
+        dir={"auto"}
+      />
+      <ContactIcons />
+    </>
   );
 });
 export default Contact;
@@ -68,76 +71,106 @@ const ContactForm = () => {
       </div>
     );
   }
+
   const castumInput =
     "focus:outline-none focus:ring ring-dk-primary relative w-full px-3 py-3 text-sm text-dk-secondary-bg placeholder:text-dk-primary bg-white border-0 rounded-lg shadow outline-none font-mono ";
-
   return (
-    <div>
-      <form
-        action={FORM_ENDPOINT}
-        onSubmit={handleSubmit}
-        method="POST"
-        dir="auto"
-      >
-        <div className="mb-3">
-          <input
-            type="text"
-            placeholder={t("contact.name")}
-            name="name"
-            className={castumInput}
-            required
-          />
-        </div>
-        <div className="pt-0 mb-3">
-          <input
-            type="email"
-            placeholder={t("contact.email")}
-            name="email"
-            className={castumInput}
-            required
-          />
-        </div>
-
-        <div className="pt-0 mb-3">
-          <textarea
-            placeholder={t("contact.message")}
-            name="message"
-            className={castumInput}
-          />
-        </div>
-        <div className="pt-0 mb-3">
-          <button
-            className="active:scale-75 focus:outline-none outline-none px-6 py-3 mb-1 mr-1 text-sm font-bold text-dk-primary-bg bg-dk-secondary uppercase transition-all duration-150 ease-linear rounded-lg border-dk-primary border-2 hover:bg-dk-primary hover:text-dk-secondary hover:border-dk-secondary"
-            type="submit"
-          >
-            {t("contact.send")}
-          </button>
-        </div>
-      </form>
-      <div className=" flex gap-8 justify-center mt-20">
-        {contactIcons.map((comp, i) => (
-          <BtnIcon key={i} {...comp} />
-        ))}
+    <form
+      action={FORM_ENDPOINT}
+      onSubmit={handleSubmit}
+      method="POST"
+      dir="auto"
+    >
+      <div className="mb-3">
+        <input
+          type="text"
+          placeholder={t("contact.name")}
+          name="name"
+          className={castumInput}
+          required
+        />
       </div>
-    </div>
+      <div className="pt-0 mb-3">
+        <input
+          type="email"
+          placeholder={t("contact.email")}
+          name="email"
+          className={castumInput}
+          required
+        />
+      </div>
+
+      <div className="pt-0 mb-3">
+        <textarea
+          placeholder={t("contact.message")}
+          name="message"
+          className={castumInput}
+        />
+      </div>
+      <div className="pt-0 mb-3">
+        <button
+          className="active:scale-75 focus:outline-none outline-none px-6 py-3 mb-1 mr-1 text-sm font-bold text-dk-primary-bg bg-dk-secondary uppercase transition-all duration-150 ease-linear rounded-lg border-dk-primary border-2 hover:bg-dk-primary hover:text-dk-secondary hover:border-dk-secondary"
+          type="submit"
+        >
+          {t("contact.send")}
+        </button>
+      </div>
+    </form>
   );
 };
 
-function BtnIcon({ name, href }) {
+const ContactIcons = () => {
+  const castumConatiner = {
+    hidden: { scale: 0.6 },
+    shown: {
+      scale: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.05,
+        delay: 0.15,
+      },
+    },
+  };
+
   return (
-    <motion.button
-      className="h-10 w-10 bg-dk-primary-bg text-dk-primary  hover:scale-105 hover:text-dk-secondary duration-200 "
-      whileTap={{ zoom: 0.9 }}
+    <motion.div
+      className="overflow-hidden flex gap-8 justify-center mt-20  w-fit mx-auto py-2 px-8 bg-[#1d0126] rounded-2xl drop-shadow-2xl shadow-md shadow-[#500269] hover:shadow-dk-primary duration-200 "
+      variants={castumConatiner}
+      initial="hidden"
+      whileInView="shown"
+      viewport={{ once: true }}
+    >
+      {icons.map((comp, i) => (
+        <BtnIcon key={i} i={i} {...comp} />
+      ))}
+    </motion.div>
+  );
+};
+
+const BtnIcon = ({ name, href, i }) => {
+  const icon = {
+    hidden: { opacity: 0, x: 100 + (1 + i) * 50 },
+    shown: {
+      opacity: 1,
+      x: 0,
+      transition: { type: "spring", stiffness: 250, duration: 0.1 },
+    },
+  };
+  return (
+    <motion.div
+      layout
+      className="text-lg bg-dk-primary  hover:scale-105 hover:text-dk-secondary duration-200 "
+      variants={icon}
     >
       <a href={href}>{name}</a>
-    </motion.button>
+    </motion.div>
   );
-}
+};
 
 const castumIcon =
-  "h-10 w-10 bg-dk-primary-bg text-dk-primary  hover:scale-105 hover:text-dk-secondary duration-200 ";
+  "h-10 w-10  text-dk-primary  bg-[#1d0126] hover:text-dk-secondary duration-200 ";
 
-const contactIcons = [
+const icons = [
   {
     name: <BsGithub className={castumIcon} />,
     href: "https://github.com/ynlevi",
