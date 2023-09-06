@@ -25,14 +25,14 @@ const Projects = forwardRef((_, ref) => {
   const scale = useTransform(
     scrollYProgress,
     [0, 0.1, 0.9, 1],
-    [0.8, 1, 1, 0.8]
+    [0.83, 1, 1, 0.83]
   );
 
   const data = (
     <div className="relative h-[250vh] pb-[25vh] lg:pb-0 pt-4" ref={ref}>
       <TypingEffect
         txt={[t("header.links.1")]}
-        className="text-dk-primary text-3xl  md:text-5xl capitalize font-extralight w-11/12 md:w-10/12 mx-auto"
+        className="text-dk-primary text-3xl  md:text-5xl capitalize font-extralight w-10/12 m-auto"
         cursorStyle={"transparent"}
         speed={25}
       />

@@ -10,16 +10,16 @@ const Contact = forwardRef((_, ref) => {
   const { t } = useTranslation();
   const data = <ContactForm />;
   return (
-    <>
+    <div className="mb-40">
       <Section
-        className={"max-w-xl my-[10vh] "}
+        className={"max-w-xl  "}
         header={t("header.links.3")}
         data={data}
         ref={ref}
         dir={"auto"}
       />
       <ContactIcons />
-    </>
+    </div>
   );
 });
 export default Contact;
@@ -121,21 +121,22 @@ const ContactForm = () => {
 
 const ContactIcons = () => {
   const castumConatiner = {
-    hidden: { scale: 0.6, opacity: 0 },
+    hidden: { scaleX: 0 },
     shown: {
-      scale: 1,
-      opacity: 1,
+      scaleX: 1,
       transition: {
         when: "beforeChildren",
         staggerChildren: 0.05,
-        delay: 0.15,
+        delay: 0.3,
+        duration: 0.15,
+        delayChildren: 0.3,
       },
     },
   };
 
   return (
     <motion.div
-      className="overflow-hidden  flex gap-8 justify-center mt-20 mb-32 w-fit mx-auto py-2 px-8 bg-[#1d0126] rounded-2xl drop-shadow-2xl shadow-md shadow-[#500269] duration-200 "
+      className="overflow-hidden  flex gap-8 justify-center w-fit mx-auto py-2 px-8 bg-[#1d0126] rounded-2xl drop-shadow-2xl shadow-md shadow-[#500269] duration-200 "
       variants={castumConatiner}
       initial="hidden"
       whileInView="shown"
