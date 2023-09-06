@@ -121,9 +121,10 @@ const ContactForm = () => {
 
 const ContactIcons = () => {
   const castumConatiner = {
-    hidden: { scale: 0.6 },
+    hidden: { scale: 0.6, opacity: 0 },
     shown: {
       scale: 1,
+      opacity: 1,
       transition: {
         when: "beforeChildren",
         staggerChildren: 0.05,
@@ -134,7 +135,7 @@ const ContactIcons = () => {
 
   return (
     <motion.div
-      className="overflow-hidden flex gap-8 justify-center mt-20  w-fit mx-auto py-2 px-8 bg-[#1d0126] rounded-2xl drop-shadow-2xl shadow-md shadow-[#500269] hover:shadow-dk-primary duration-200 "
+      className="overflow-hidden  flex gap-8 justify-center mt-20 mb-32 w-fit mx-auto py-2 px-8 bg-[#1d0126] rounded-2xl drop-shadow-2xl shadow-md shadow-[#500269] duration-200 "
       variants={castumConatiner}
       initial="hidden"
       whileInView="shown"
@@ -153,22 +154,18 @@ const BtnIcon = ({ name, href, i }) => {
     shown: {
       opacity: 1,
       x: 0,
-      transition: { type: "spring", stiffness: 250, duration: 0.1 },
+      transition: { type: "spring", stiffness: 250, duration: 0.2 },
     },
   };
   return (
-    <motion.div
-      layout
-      className="text-lg bg-dk-primary  hover:scale-105 hover:text-dk-secondary duration-200 "
-      variants={icon}
-    >
+    <motion.div variants={icon} whileTap={{ scale: 0.9 }}>
       <a href={href}>{name}</a>
     </motion.div>
   );
 };
 
 const castumIcon =
-  "h-10 w-10  text-dk-primary  bg-[#1d0126] hover:text-dk-secondary duration-200 ";
+  "scale-105 hover:text-dk-primary hover:scale-110 md:text-4xl text-3xl bg-[#1d0126] text-dk-secondary  duration-200 ";
 
 const icons = [
   {

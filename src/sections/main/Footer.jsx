@@ -5,7 +5,7 @@ export default function Footer({ className }) {
     <div className="mx-auto w-fit mt-16 pb-2 font-extralight">
       <a
         href="https://ynlevi.github.io/CV/"
-        className={`w-fit text-xs sm:text-sm  text-primary py-2  text-dk-secondary  ${className}`}
+        className={`w-fit text-xs sm:text-sm  text-primary py-2  hover:text-dk-secondary text-dk-primary ${className}`}
       >
         {t("footer.a") + " " + currentYear}
       </a>

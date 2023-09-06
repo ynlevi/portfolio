@@ -36,14 +36,13 @@ const WhyMeCard = ({ i }) => {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: { duration: 1, type: "spring" },
     },
   };
 
   return (
     <motion.ul
       key={i}
-      className={`flex  rounded-lg bg-dk-primary py-3 divide-x max-w-lg md:relative mx-auto md:mx-0 divide-dk-secondary border border-dk-secondary hover:shadow-castum hover:text-dk-primary-bg duration-200 ${
+      className={`flex  rounded-lg bg-dk-primary py-3 divide-x max-w-lg md:relative mx-auto md:mx-0 divide-dk-secondary border border-dk-secondary hover:shadow-castum  hover:text-dk-primary-bg ${
         !(i % 2 === 0) &&
         "flex-row-reverse divide-x-reverse md:flex-row md:divide-x"
       }`}
@@ -52,6 +51,7 @@ const WhyMeCard = ({ i }) => {
         minHeight: "80px",
       }}
       variants={cardVariant}
+      transition={{ duration: 1, type: "spring" }}
     >
       <li className="my-auto border-black px-3">
         <Icon i={i} />
@@ -86,7 +86,7 @@ const Icon = ({ i }) => (
             opacity: { duration: 0.1 },
             repeat: Infinity,
             repeatType: "loop",
-            repeatDelay: 1,
+            repeatDelay: 0.5,
           },
         }}
         style={{

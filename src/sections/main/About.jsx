@@ -36,7 +36,7 @@ export default function About() {
         )}
       </div>
       <motion.div
-        className="w-80 h-80  md:w-[23rem] md:h-[23rem] mx-auto "
+        className="w-80 h-80  md:w-[23rem] md:h-[23rem] mx-auto max-w-[80vw] max-h-[80vw] "
         initial={
           isSmall
             ? { opacity: 0, scale: 0.01, rotate: "360deg", x: 7, y: -242 }
