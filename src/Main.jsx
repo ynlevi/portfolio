@@ -10,7 +10,7 @@ import { useRef, forwardRef, useState, useEffect } from "react";
 import MobileHeader from "./componets/MobileHeader";
 import ComputerHeader from "./componets/ComputerHeader";
 import BtnScrollToStart from "./componets/BtnScrollToStart";
-
+import { useTranslation } from "react-i18next";
 import {
   animate,
   motion,
@@ -34,6 +34,8 @@ export default function Main() {
 
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.2]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.7]);
+  const { t, i18n } = useTranslation();
+
   return (
     <div ref={mainRef}>
       <MobileHeader refs={refs} mainRef={mainRef} />

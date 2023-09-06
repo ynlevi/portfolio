@@ -16,9 +16,12 @@ module.exports = {
         success: "#00acee",
         danger: "#FE0000",
       },
-    },
-    fontFamily: {
-      mono: ["Roboto Mono", "monospace"],
+      fontFamily: {
+        mono: ["Roboto Mono", "monospace"],
+      },
+      boxShadow: {
+        castum: "var(--dk-primary) 0px 3px 8px",
+      },
     },
   },
 };

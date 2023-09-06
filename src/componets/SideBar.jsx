@@ -1,7 +1,6 @@
 //local
 import profile from "../../src/data/media/images/profile.jpeg";
 import BtnXMotion from "./BtnXMotion";
-import BtnGitHub from "./BtnGitHub";
 import navLinks from "../data/links/navLinks";
 //npm
 import { useEffect, useRef, useState } from "react";
@@ -82,7 +81,6 @@ const SideMenu = ({ handleClick, refs, mainRef }) => {
           </motion.ul>
           <MenuLinks refs={refs} handleClick={handleClick} />
         </div>
-        <BtnGitHub className={"text-dk-secondary-bg"} />
       </motion.div>
 
       <motion.div

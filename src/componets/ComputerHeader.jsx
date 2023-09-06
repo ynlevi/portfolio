@@ -1,5 +1,4 @@
 import navLinks from "../data/links/navLinks";
-import BtnGitHub from "./BtnGitHub";
 import { motion } from "framer-motion";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslation } from "react-i18next";
@@ -10,8 +9,8 @@ export default function ComputerHeader({ refs }) {
   const scrolTo = (sectionRef) =>
     sectionRef.current.scrollIntoView({ behavior: "smooth" });
   return (
-    <div className="hidden md:flex absolute top-0 bottom-0 w-screen justify-between  ">
-      <div className="flex flex-col justify-between ml-5 my-4">
+    <div className="hidden md:block absolute top-0 bottom-0 ">
+      <div className="flex flex-col justify-between ml-5 py-4 h-full">
         <LanguageSwitcher />
         <ul>
           <motion.div
@@ -36,10 +35,6 @@ export default function ComputerHeader({ refs }) {
           </motion.div>
         </ul>
       </div>
-      <BtnGitHub
-        className="mb-auto text-dk-secondary "
-        hover={{ color: "var(--dk-primary)" }}
-      />
     </div>
   );
 }
