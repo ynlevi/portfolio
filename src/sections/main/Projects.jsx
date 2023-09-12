@@ -68,6 +68,6 @@ const Projects = forwardRef((_, ref) => {
 export default Projects;
 
 const videos = [
-  { name: offek, href: "https://sayag-studio.site" },
+  { name: offek, href: "https://ynlevi.github.io/sayag-studio" },
   { name: ton, href: "https://ynlevi.github.io/ton-repairs-en" },
 ];

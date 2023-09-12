@@ -18,15 +18,15 @@ const en = {
     },
     2: {
       span: `perfectionism on every pixel. `,
-      p: `I'm not a storng beliver of miracles. I must understand every weird and unexpected behaviour that happens in the project.`,
+      p: `I'm don't beliver in miracles. I must understand every weird and unexpected behaviour that happens in the project.`,
     },
     3: {
       span: `syntactic sugar. `,
-      p: `I use the latest update technology that allowd me to implement quite complex behiver in cleaner and more readable syntax. in addition, I prefer making small component with good naming that would help other developers to understand my code easily.`,
+      p: `I use the latest update technology that allowd me to implement more complex behiver in cleaner and more readable syntax. In addition, I prefer making small component with good naming that would help other developers to understand my code easily.`,
     },
     4: {
       span: `Ambitioun. `,
-      p: `My life now is dedicate to build my career and my reputation as a good front end development. I would do anything to make sure your are happy with my work.`,
+      p: `My life now is dedicate to build my career and my reputation as a great front end development. I would do anything to make sure your are happy with my work.`,
     },
   },
   contact: {

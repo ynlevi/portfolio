@@ -28,7 +28,7 @@ const FORM_ENDPOINT =
   "https://public.herotofu.com/v1/602f7b20-4252-11ee-b711-0fdc810d0d65";
 
 const ContactForm = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [submitted, setSubmitted] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -109,7 +109,9 @@ const ContactForm = () => {
       </div>
       <div className="pt-0 mb-3">
         <button
-          className="active:scale-75 focus:outline-none outline-none px-6 py-3 mb-1 mr-1 text-sm font-bold text-dk-primary-bg bg-dk-secondary uppercase transition-all duration-150 ease-linear rounded-lg border-dk-primary border-2 hover:bg-dk-primary hover:text-dk-secondary hover:border-dk-secondary"
+          className={`active:scale-75 focus:outline-none outline-none px-6  font-bold text-dk-primary-bg bg-dk-secondary uppercase transition-all duration-150 ease-linear rounded-lg border-dk-primary border-2 hover:bg-dk-primary hover:text-dk-secondary hover:border-dk-secondary ${
+            i18n.language === "en" ? "text-sm py-3" : "text-lg py-1"
+          }`}
           type="submit"
         >
           {t("contact.send")}
