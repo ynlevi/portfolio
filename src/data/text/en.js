@@ -34,7 +34,7 @@ const en = {
     name: "Your name",
     email: "Your Email",
     message: "Your Message",
-    send: "Send a message",
+    send: "Send",
     secusses: { h1: "Thank you!", p: "I'll be in touch soon." },
   },
   footer: { a: "Made with ♡ by Yonathan Levi | © All rights reserved" },
