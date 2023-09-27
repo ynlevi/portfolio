@@ -1,5 +1,6 @@
 import { forwardRef, useRef } from "react";
 import Section from "../../componets/Section";
+import hotel from "../../data/media/videos/hotel.webm";
 import offek from "../../data/media/videos/offek.mp4";
 import ton from "../../data/media/videos/ton.mp4";
 import ReactPlayer from "react-player";
@@ -20,7 +21,7 @@ const Projects = forwardRef((_, ref) => {
   const x = useTransform(
     scrollYProgress,
     [0, 0.1, 0.9, 1],
-    ["0%", "0%", "-50.4%", "-50.4%"]
+    ["0%", "0%", "-66.9%", "-66.9%"]
   );
   const scale = useTransform(
     scrollYProgress,
@@ -29,7 +30,7 @@ const Projects = forwardRef((_, ref) => {
   );
 
   const data = (
-    <div className="relative h-[250vh] pb-[25vh] lg:pb-0 pt-4" ref={ref}>
+    <div className="relative h-[375vh] pb-[25vh] lg:pb-0 pt-4" ref={ref}>
       <TypingEffect
         txt={[t("header.links.1")]}
         className="text-dk-primary text-3xl  md:text-5xl capitalize font-extralight w-10/12 m-auto"
@@ -68,6 +69,7 @@ const Projects = forwardRef((_, ref) => {
 export default Projects;
 
 const videos = [
-  { name: offek, href: "https://ynlevi.github.io/sayag-studio" },
+  { name: hotel, href: "https://the-place.vercel.app" },
+  { name: offek, href: "https://sayag-studio.site" },
   { name: ton, href: "https://ynlevi.github.io/ton-repairs-en" },
 ];

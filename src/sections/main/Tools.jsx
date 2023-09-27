@@ -7,6 +7,8 @@ import {
   FaJsSquare,
   FaGithub,
 } from "react-icons/fa";
+import { TbBrandNextjs } from "react-icons/tb";
+import { SiStrapi } from "react-icons/si";
 import { motion } from "framer-motion";
 import { SiTailwindcss } from "react-icons/si";
 import { LuFramer } from "react-icons/lu";
@@ -60,6 +62,8 @@ const iconsObj = [
   { icon: <FaCss3Alt size={65} />, discription: "css" },
   { icon: <FaJsSquare size={65} />, discription: "java script" },
   { icon: <FaReact size={65} />, discription: "react" },
+  { icon: <TbBrandNextjs size={70} />, discription: "next.js" },
+  { icon: <SiStrapi size={60} />, discription: "strapi" },
   { icon: <SiTailwindcss size={65} />, discription: "tailwind css" },
   { icon: <LuFramer size={65} />, discription: "framer motion" },
   { icon: <BsGit size={65} />, discription: "git" },
@@ -72,4 +76,6 @@ const iconsObj = [
   { icon: <LuFramer size={65} />, discription: "framer motion" },
   { icon: <BsGit size={65} />, discription: "git" },
   { icon: <FaGithub size={65} />, discription: "git hub" },
+  { icon: <TbBrandNextjs size={65} />, discription: "next.js" },
+  { icon: <SiStrapi size={65} />, discription: "strapi" },
 ];
