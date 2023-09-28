@@ -177,7 +177,7 @@ const icons = [
   },
   {
     name: <SiLinkedin className={castumIcon} />,
-    href: "www.linkedin.com/in/yonathan-levi",
+    href: "https://www.linkedin.com/in/yonathan-levi",
   },
   {
     name: <SiWhatsapp className={castumIcon} />,
