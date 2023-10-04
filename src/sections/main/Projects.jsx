@@ -1,7 +1,7 @@
 import { forwardRef, useRef } from "react";
 import Section from "../../componets/Section";
-import hotel from "../../data/media/videos/hotel.webm";
-import offek from "../../data/media/videos/offek.webm";
+import hotel from "../../data/media/videos/hotel.mp4";
+import offek from "../../data/media/videos/offek.mp4";
 import ton from "../../data/media/videos/ton.mp4";
 import ReactPlayer from "react-player";
 import TypingEffect from "../../componets/TypingEffect";
