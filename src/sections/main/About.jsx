@@ -20,8 +20,9 @@ export default function About() {
           txt={["Hi there:)", t("about.headline")]}
           className={"text-3xl sm:text-5xl text-dk-primary font-mono "}
           handleFinish={() =>
-            setTimeout(() => setHeaderEffectIsFinished(true), 700)
+            setTimeout(() => setHeaderEffectIsFinished(true), 600)
           }
+          speed={30}
         />
         {HeaderEffectIsFinished && (
           <TypingEffect

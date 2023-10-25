@@ -7,7 +7,7 @@ function Offer() {
   const data = (
     <div className="max-w-3xl mx-auto" ref={ref}>
       <SectionHeadline txt={"Here is what I offer:"} />
-      <div className="bg-dk-primary text-dk-primary-bg rounded-lg mt-3 px-3  gap-3 flex flex-col border-2 border-dk-secondary hover:shadow-castum shadow-white duration-300 divide-y divide-dk-secondary pt-4 pb-7">
+      <div className="bg-dk-primary text-dk-primary-bg rounded-lg mt-3 px-3  gap-3 flex flex-col border-2 border-dk-secondary hover:shadow-castum shadow-white duration-300 divide-y font-light divide-dk-secondary pt-4 pb-7">
         {details.map((detail) => (
           <Detail {...detail} />
         ))}
@@ -52,6 +52,6 @@ const details = [
   },
   {
     span: "Customer Support: ",
-    p: "At my core, I believe in exceptional customer service. I'm with you every step of the way, ready to assist with any problem or technical issue you may encounter. Your success is my priority.",
+    p: "I believe in exceptional customer service. I'm with you every step of the way, ready to assist with any problem or technical issue you may encounter. Your success is my priority.",
   },
 ];

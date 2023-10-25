@@ -16,7 +16,7 @@ const WhyMe = () => {
 
   const data = (
     <motion.div
-      className=" text-dk-secondary-bg text-sm mb-6 flex flex-col gap-5 md:gap-8  "
+      className=" text-dk-secondary-bg text-sm mb-6 flex flex-col gap-4"
       variants={containerVariant}
       initial="hidden"
       whileInView="shown"
@@ -48,11 +48,12 @@ const WhyMeCard = ({ i }) => {
       transition: { duration: 0.3 },
     },
   };
+  // border-dk-secondary hover:shadow-castum  hover:text-dk-primary-bg
 
   return (
     <motion.ul
       key={i}
-      className={`flex rounded-lg bg-dk-primary py-3 divide-x max-w-xl text-base md:relative mx-auto md:mx-0 divide-dk-secondary border border-dk-secondary hover:shadow-castum  hover:text-dk-primary-bg ${
+      className={`flex rounded-lg bg-dk-primary py-3 font-light divide-x max-w-xl text-base md:relative mx-auto md:mx-0 divide-dk-secondary border-2 border-dk-secondary md:hover:shadow-castum md:hover:text-dk-primary-bg ${
         !(i % 2 === 0) &&
         "flex-row-reverse divide-x-reverse md:flex-row md:divide-x"
       }`}
