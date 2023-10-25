@@ -2,16 +2,23 @@ import SectionHeadline from "../../componets/SectionHeadline";
 import Section from "../../componets/Section";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { useRef } from "react";
+import { motion } from "framer-motion";
 function Offer() {
   const ref = useRef();
   const data = (
     <div className="max-w-3xl mx-auto" ref={ref}>
       <SectionHeadline txt={"Here is what I offer:"} />
-      <div className="bg-dk-primary text-dk-primary-bg rounded-lg mt-3 px-3  gap-3 flex flex-col border-2 border-dk-secondary hover:shadow-castum shadow-white duration-300 divide-y font-light divide-dk-secondary pt-4 pb-7">
+      <motion.div
+        className="bg-dk-primary text-dk-primary-bg rounded-lg mt-3 px-3  gap-3 flex flex-col border-2 border-dk-secondary hover:shadow-castum shadow-white divide-y font-light divide-dk-secondary pt-4 pb-7"
+        initial={{ opacity: 0, y: "25px" }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8, duration: 0.7 }}
+        viewport={{ once: true }}
+      >
         {details.map((detail) => (
           <Detail {...detail} />
         ))}
-      </div>
+      </motion.div>
     </div>
   );
   return <Section data={data} ref={ref} />;
