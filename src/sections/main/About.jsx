@@ -2,10 +2,11 @@ import Section from "../../componets/Section";
 import profile from "../../data/media/images/profile.jpeg";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-
+import { useTranslation } from "react-i18next";
 import TypingEffect from "../../componets/TypingEffect";
 import { useMediaQuery } from "@uidotdev/usehooks";
 export default function About() {
+  const { t } = useTranslation();
   const isSmall = useMediaQuery("only screen and (max-width : 640px)");
   const isMedium = useMediaQuery("only screen and (max-width: 768px)");
 
@@ -14,21 +15,19 @@ export default function About() {
 
   const data = (
     <div className="flex flex-col justify-evenly gap-20 w-screen h-screen ">
-      <div className=" mx-auto w-8/12 md:w-10/12  relative md:left-8 md:mt-20  -z-50">
+      <div className=" mx-auto w-8/12 md:w-8/12 relative md:left-8 md:mt-20 -z-50">
         <TypingEffect
-          txt={["Hi there:)", "I'm Yonathan"]}
-          className={
-            "text-3xl sm:text-5xl text-dk-primary font-mono md:max-w-2xl mx-auto "
-          }
+          txt={["Hi there:)", t("about.headline")]}
+          className={"text-3xl sm:text-5xl text-dk-primary font-mono "}
           handleFinish={() =>
             setTimeout(() => setHeaderEffectIsFinished(true), 700)
           }
         />
         {HeaderEffectIsFinished && (
           <TypingEffect
-            txt={["A Front-End developer who can do pretty cool stuff"]}
+            txt={[t("about.p")]}
             className={
-              "text-dk-primary sm:text-xl mt-8 font-mono max-w-xs md:max-w-2xl mx-auto absolute md:inset-x-0"
+              "text-dk-primary sm:text-xl mt-8 font-mono absolute md:inset-x-0"
             }
             handleFinish={() => setPEffectIsFinished(true)}
             speed={30}

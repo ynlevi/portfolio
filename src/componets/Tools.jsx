@@ -1,4 +1,4 @@
-import Section from "../../componets/Section";
+import Section from "./Section";
 // icons
 import {
   FaCss3Alt,
@@ -18,20 +18,10 @@ import { useTranslation } from "react-i18next";
 
 const Tools = forwardRef((_, ref) => {
   const { t } = useTranslation();
-  const data = (
-    //applying left & right shadow
-    <div className="relative flex sm:gap-8 md:gap-12 overflow-hidden before:absolute before:inset-y-0 before:left-0 before:z-50 before:w-2/6 before:bg-gradient-to-r before:from-dk-primary-bg  before:to-transparent before:scale-110 after:absolute after:inset-y-0 after:-right-4 z-10 after:bg-gradient-to-l after:from-dk-primary-bg after:to-transparent after:w-2/6 after:scale-110  ">
-      <Icons obj={iconsObj} />
+  return (
+    <div className="relative flex sm:gap-8 md:gap-12 overflow-hidden before:absolute before:inset-y-0 before:left-0 before:z-50 before:w-2/6 before:bg-gradient-to-r before:from-dk-primary-bg  before:to-transparent before:scale-110 after:absolute after:inset-y-0 after:-right-4 z-10 after:bg-gradient-to-l after:from-dk-primary-bg after:to-transparent after:w-2/6 after:scale-110 max-w-xl ">
       <Icons obj={iconsObj} />
     </div>
-  );
-  return (
-    <Section
-      header={t("header.links.2")}
-      data={data}
-      className={"my-12"}
-      ref={ref}
-    />
   );
 });
 export default Tools;
@@ -39,7 +29,7 @@ export default Tools;
 const Icons = ({ obj }) => {
   return (
     <div
-      className="flex gap-0 sm:gap-8 md:gap-12 justify-center my-32 "
+      className="flex gap-0 sm:gap-8 md:gap-12 justify-center"
       style={{ animation: "40s move-right infinite linear" }}
     >
       {obj.map((obj, i) => (

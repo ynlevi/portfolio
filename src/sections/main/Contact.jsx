@@ -11,13 +11,7 @@ const Contact = forwardRef((_, ref) => {
   const data = <ContactForm />;
   return (
     <div className="mb-40">
-      <Section
-        className={"max-w-xl  "}
-        header={t("header.links.3")}
-        data={data}
-        ref={ref}
-        dir={"auto"}
-      />
+      <Section className={"max-w-3xl"} data={data} ref={ref} dir={"auto"} />
       <ContactIcons />
     </div>
   );
@@ -75,49 +69,49 @@ const ContactForm = () => {
   const castumInput =
     "focus:outline-none focus:ring ring-dk-primary relative w-full px-3 py-3 text-sm text-dk-secondary-bg placeholder:text-dk-primary bg-white border-0 rounded-lg shadow outline-none font-mono ";
   return (
-    <form
-      action={FORM_ENDPOINT}
-      onSubmit={handleSubmit}
-      method="POST"
-      dir="auto"
-    >
-      <div className="mb-3">
-        <input
-          type="text"
-          placeholder={t("contact.name")}
-          name="name"
-          className={castumInput}
-          required
-        />
-      </div>
-      <div className="pt-0 mb-3">
-        <input
-          type="email"
-          placeholder={t("contact.email")}
-          name="email"
-          className={castumInput}
-          required
-        />
-      </div>
-
-      <div className="pt-0 mb-3">
-        <textarea
-          placeholder={t("contact.message")}
-          name="message"
-          className={castumInput}
-        />
-      </div>
-      <div className="pt-0 mb-3">
-        <button
-          className={`active:scale-75 focus:outline-none outline-none px-6  font-bold text-dk-primary-bg bg-dk-secondary uppercase transition-all duration-150 ease-linear rounded-lg border-dk-primary border-2 hover:bg-dk-primary hover:text-dk-secondary hover:border-dk-secondary ${
-            i18n.language === "en" ? "text-sm py-3" : "text-lg py-1"
-          }`}
-          type="submit"
-        >
-          {t("contact.send")}
-        </button>
-      </div>
-    </form>
+    <>
+      <h2 className="text-dk-primary text-2xl md:text-3xl font-extralight  pb-4">
+        {t("contact.header")}
+      </h2>
+      <form
+        action={FORM_ENDPOINT}
+        onSubmit={handleSubmit}
+        method="POST"
+        dir="auto"
+        className="flex flex-col gap-2"
+      >
+        <div className="flex flex-col gap-2 md:flex-row">
+          <input
+            type="text"
+            placeholder={t("contact.name")}
+            name="name"
+            className={`md:rounded-r-none ${castumInput}`}
+          />
+          <input
+            type="email"
+            placeholder={t("contact.email")}
+            name="email"
+            className={`md:rounded-l-none ${castumInput}`}
+            required
+          />
+        </div>
+        <div className="">
+          <textarea
+            placeholder={t("contact.message")}
+            name="message"
+            className={castumInput}
+          />
+          <button
+            className={`active:scale-75 focus:outline-none outline-none px-6 mt-1 font-bold text-dk-primary-bg bg-dk-secondary uppercase transition-all duration-150 ease-linear rounded-lg border-dk-primary border-2 hover:bg-dk-primary hover:text-dk-secondary hover:border-dk-secondary ${
+              i18n.language === "en" ? "text-sm py-3" : "text-lg py-1"
+            }`}
+            type="submit"
+          >
+            {t("contact.send")}
+          </button>
+        </div>
+      </form>
+    </>
   );
 };
 

@@ -12,6 +12,7 @@ import {
   motion,
 } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import SectionHeadline from "../../componets/SectionHeadline";
 const Projects = forwardRef((_, ref) => {
   const { t } = useTranslation();
   const { scrollYProgress } = useScroll({
@@ -30,12 +31,10 @@ const Projects = forwardRef((_, ref) => {
   );
 
   const data = (
-    <div className="relative h-[375vh] pb-[25vh] lg:pb-0 pt-4" ref={ref}>
-      <TypingEffect
-        txt={[t("header.links.1")]}
-        className="text-dk-primary text-3xl  md:text-5xl capitalize font-extralight w-10/12 m-auto"
-        cursorStyle={"transparent"}
-        speed={25}
+    <div className="relative h-[375vh] lg:pb-0 " ref={ref}>
+      <SectionHeadline
+        txt={"Here're some projects i've done"}
+        className={"w-10/12 mx-auto "}
       />
       <motion.div
         className=" overflow-hidden rounded-lg sticky top-[25vh] md:top-20 xl:-top-20  "

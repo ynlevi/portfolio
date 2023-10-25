@@ -22,7 +22,7 @@ export default function TypingEffect({
     <div className={className}>
       <span>{text}</span>
       <Cursor
-        cursorStyle={hideCursor ? "." : "|"}
+        cursorStyle={hideCursor ? "" : "|"}
         cursorBlinking={!hideCursor}
         cursorColor={cursorStyle}
       />

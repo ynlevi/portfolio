@@ -19,7 +19,7 @@ const Section = forwardRef(({ data, header, className, dir }, ref) => {
   );
   return (
     <motion.div
-      className={`py-16 w-11/12 mx-auto md:w-10/12  ${className}`}
+      className={`py-8 w-11/12 mx-auto md:w-10/12  ${className}`}
       ref={ref}
       style={{ scale }}
       dir={dir ? dir : "ltr"}

@@ -3,7 +3,6 @@ import Header from "./componets/MobileHeader";
 import About from "./sections/main/About";
 import WhyMe from "./sections/main/WhyMe";
 import Projects from "./sections/main/Projects";
-import Tools from "./sections/main/Tools";
 import Contact from "./sections/main/Contact";
 import Footer from "./sections/main/Footer";
 import { useRef, forwardRef, useState, useEffect } from "react";
@@ -21,6 +20,7 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
+import Offer from "./sections/main/Offer";
 export default function Main() {
   const refs = initializeRefs();
   const mainRef = useRef(null);
@@ -52,9 +52,9 @@ export default function Main() {
           ref={sectionRef}
         >
           {/*!!!! names of refs need to fit the navLinks arr that located at ./data/links/navLinks !!!!*/}
-          <WhyMe ref={refs["why-me"]} />
+          <WhyMe />
           <Projects ref={refs.projects} />
-          <Tools ref={refs["tools"]} />
+          <Offer />
           <Contact ref={refs["contact-me"]} />
           <Footer />
           <BtnScrollToStart ref={mainRef} />
