@@ -7,13 +7,13 @@ const en = {
   },
   about: {
     headline: "It's great to have you here!",
-    p: "I'm a Yonathan Levi, a web developer who can do pretty cool stuff...",
+    p: "I'm Yonathan Levi, a web developer who can do pretty cool stuff...",
   },
   why: {
-    intro: "why would you want a website?",
+    intro: "Why would you want a website?",
     0: {
       span: `Improved Visibility: `,
-      p: `Many people seeking services like yours tends to use Google. When you have a quelity website with effective SEO, you make it easier for potential customers to discover your business when they search for your products or services.`,
+      p: `Many people are seeking services like yours tends to use Google. When you have a quelity website with effective SEO, you make it easier for potential customers to discover your business when they search for your products or services.`,
     },
     1: {
       span: "Convenience for Customers: ",
@@ -32,7 +32,7 @@ const en = {
     header: "It's time to level up your business.",
     name: "Your name",
     email: "Your Email",
-    message: "Your Message",
+    message: "Your message",
     send: "Send",
     secusses: { h1: "Thank you!", p: "I'll be in touch soon." },
   },
