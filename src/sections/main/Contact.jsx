@@ -70,15 +70,18 @@ const ContactForm = () => {
     "focus:outline-none focus:ring ring-dk-primary relative w-full px-3 py-3 text-sm text-dk-secondary-bg placeholder:text-dk-primary bg-white border-0 rounded-lg shadow outline-none font-mono ";
   return (
     <>
-      <h2 className="text-dk-primary text-2xl md:text-3xl font-extralight  pb-4">
+      <h2 className="text-dk-primary text-2xl md:text-3xl font-extralight mb-2">
         {t("contact.header")}
       </h2>
+      <p className="mb-5 text-dk-primary text-2xl font-extralight">
+        Get a free consultation for your new website today!
+      </p>
       <form
         action={FORM_ENDPOINT}
         onSubmit={handleSubmit}
         method="POST"
         dir="auto"
-        className="flex flex-col gap-2"
+        className="flex flex-col gap-2 mb-10"
       >
         <div className="flex flex-col gap-2 md:flex-row">
           <input

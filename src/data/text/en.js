@@ -29,7 +29,7 @@ const en = {
     },
   },
   contact: {
-    header: "It's time to level up your business!",
+    header: "It's time to level up your business.",
     name: "Your name",
     email: "Your Email",
     message: "Your Message",

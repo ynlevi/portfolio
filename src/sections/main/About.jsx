@@ -14,8 +14,8 @@ export default function About() {
   const [pEffectIsFinished, setPEffectIsFinished] = useState(false);
 
   const data = (
-    <div className="flex flex-col justify-evenly gap-20 w-screen h-screen ">
-      <div className=" mx-auto w-8/12 md:w-8/12 relative md:left-8 md:mt-20 -z-50">
+    <div className="flex flex-col justify-evenly gap-20 w-screen h-screen">
+      <div className="mx-auto w-10/12 md:w-8/12 relative md:left-8 md:mt-20 -z-50">
         <TypingEffect
           txt={["Hi there:)", t("about.headline")]}
           className={"text-3xl sm:text-5xl text-dk-primary font-mono "}
