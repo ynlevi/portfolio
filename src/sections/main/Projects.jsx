@@ -68,7 +68,7 @@ const Projects = forwardRef((_, ref) => {
 export default Projects;
 
 const videos = [
-  { name: hotel, href: "https://the-place.vercel.app" },
+  { name: hotel, href: "https://the-place-ve.vercel.app" },
   { name: offek, href: "https://sayag-studio.site" },
   { name: ton, href: "https://ynlevi.github.io/ton-repairs-en" },
 ];
