@@ -13,7 +13,7 @@ const en = {
     intro: "Why would you want a website?",
     0: {
       span: `Improved Visibility: `,
-      p: `Many people are seeking services like yours tends to use Google. When you have a quelity website with effective SEO, you make it easier for potential customers to discover your business when they search for your products or services.`,
+      p: `Many people seeking services like yours tends to use Google. When you have a quelity website with effective SEO, you make it easier for potential customers to discover your business when they search for your products or services.`,
     },
     1: {
       span: "Convenience for Customers: ",

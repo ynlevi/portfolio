@@ -69,6 +69,6 @@ export default Projects;
 
 const videos = [
   { name: hotel, href: "https://the-place-ve.vercel.app" },
-  { name: offek, href: "https://sayag-studio.site" },
+  // { name: offek, href: "https://sayag-studio.site" },
   { name: ton, href: "https://ynlevi.github.io/ton-repairs-en" },
 ];
